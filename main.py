@@ -2,7 +2,7 @@
 # This is a program trying to solve the question from this reddit post ^
 
 # Warmup 1 - remove 0s from a sequence:
-list = [5, 3, 0, 2, 6, 2, 0, 7, 2, 5]
+num_list = [5, 3, 0, 2, 6, 2, 0, 7, 2, 5]
 
 
 def warm1(seq):
@@ -11,22 +11,22 @@ def warm1(seq):
             seq.remove(x)
 
 
-warm1(list)
-print(list)
+warm1(num_list)
+print(num_list)
 
 # Warmup 2 = sort list in descending order:
-list = [5, 1, 3, 4, 2]
+num_list = [5, 1, 3, 4, 2]
 
 
 def warm2(seq):
     seq.sort(reverse=True)
 
 
-warm2(list)
-print(list)
+warm2(num_list)
+print(num_list)
 
 # Warmup 3 = length check:
-list = [1,1]
+num_list = [1, 1]
 num = 3
 
 
@@ -37,5 +37,19 @@ def warm3(seq, n):
         return True
 
 
-print(warm3(list, num))
+print(warm3(num_list, num))
 
+# Warmup 4 = front elimination:
+num_list = [5, 4, 3, 2, 1]
+num = 4
+
+
+def warm4(seq, n):
+    loc = 0
+    for x in seq[0:n]:
+        seq[loc] = seq[loc]-1
+        loc = loc + 1
+    return seq
+
+
+print(warm4(num_list, num))
