@@ -24,3 +24,18 @@ def warm2(seq):
 
 warm2(list)
 print(list)
+
+# Warmup 3 = length check:
+list = [1,1]
+num = 3
+
+
+def warm3(seq, n):
+    if n <= len(seq):
+        return False
+    else:
+        return True
+
+
+print(warm3(list, num))
+
