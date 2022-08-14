@@ -13,3 +13,14 @@ def warm1(seq):
 
 warm1(list)
 print(list)
+
+# Warmup 2 = sort list in descending order:
+list = [5, 1, 3, 4, 2]
+
+
+def warm2(seq):
+    seq.sort(reverse=True)
+
+
+warm2(list)
+print(list)
