@@ -2,8 +2,6 @@
 # This is a program trying to solve the question from this reddit post ^
 
 # Warmup 1 - remove 0s from a sequence:
-num_list = [5, 3, 0, 2, 6, 2, 0, 7, 2, 5]
-
 
 def warm1(seq):
     for x in seq:
@@ -11,24 +9,14 @@ def warm1(seq):
             seq.remove(x)
 
 
-warm1(num_list)
-print(num_list)
-
-# Warmup 2 = sort list in descending order:
-num_list = [5, 1, 3, 4, 2]
+# Warmup 2 - sort list in descending order:
 
 
 def warm2(seq):
     seq.sort(reverse=True)
 
 
-warm2(num_list)
-print(num_list)
-
 # Warmup 3 = length check:
-num_list = [1, 1]
-num = 3
-
 
 def warm3(seq, n):
     if n <= len(seq):
@@ -37,19 +25,32 @@ def warm3(seq, n):
         return True
 
 
-print(warm3(num_list, num))
-
-# Warmup 4 = front elimination:
-num_list = [5, 4, 3, 2, 1]
-num = 4
-
+# Warmup 4 - front elimination:
 
 def warm4(seq, n):
     loc = 0
     for x in seq[0:n]:
-        seq[loc] = seq[loc]-1
+        seq[loc] = seq[loc] - 1
         loc = loc + 1
     return seq
 
 
-print(warm4(num_list, num))
+# Challenge: the Havel-Hakimi algorithm
+
+
+def hh(seq):
+    while True:
+        warm1(seq)
+        if len(seq) <= 0:
+            return True
+
+        warm2(seq)
+        n = seq.pop(0)
+        if n > len(seq):
+            return False
+
+        warm4(seq, n)
+        print(seq)
+
+
+print(hh([16, 9, 9, 15, 9, 7, 9, 11, 17, 11, 4, 9, 12, 14, 14, 12, 17, 0, 3, 16]))
